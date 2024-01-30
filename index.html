@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax web page</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <div><img src="./img/sun.png" id="sun" alt="" /></div>
+      <div><img src="./img/2.png" id="back" alt="" /></div>
+      <div><img src="./img/1.png" id="front" alt="" /></div>
+      <div><img src="./img/3.png" id="forest" alt="" /></div>
+      <div>
+        <a href="#" id="btn">Explore</a>
+      </div>
+    </section>
+    <div class="sec" id="sec">
+      <h2>Parallax scroll</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id autem
+        provident labore maxime! Error nobis accusantium unde a ullam aliquid,
+        laboriosam deserunt tempora doloremque recusandae perferendis vel
+        voluptas, commodi autem tempore nisi in, at enim neque tenetur. Magni
+        voluptates aut, incidunt aperiam facere at exercitationem soluta velit
+        amet est officiis odio natus minima? Laborum tenetur aliquam neque
+        ratione velit illo exercitationem ducimus, veritatis laboriosam adipisci
+        corrupti numquam aut omnis consequuntur at nobis. Ipsa saepe suscipit
+        dolore, in molestiae corrupti a delectus officiis beatae voluptas vitae
+        illum esse tempore? Maxime rerum dolores, voluptate laboriosam nobis
+        odit aperiam, commodi exercitationem asperiores amet reprehenderit atque
+        eveniet nihil vero modi nostrum corrupti quasi? Tenetur minus modi quasi
+        illo repellendus architecto, delectus, temporibus in nihil doloremque
+        eligendi! Dolorem, incidunt, qui unde ab quaerat dolorum officia nobis
+        voluptatibus maxime repudiandae nemo molestiae quibusdam sequi quasi
+        facere iure magni totam odio possimus, eligendi consequatur nostrum
+        ipsam dicta temporibus! Neque quae asperiores maiores nisi, perferendis
+        ducimus vero dolores distinctio nostrum ea laborum doloremque magni
+        voluptate, reiciendis, voluptatibus omnis <br /><br />speriores amet
+        reprehenderit atque eveniet nihil vero modi nostrum corrupti quasi?
+        Tenetur minus modi quasi illo repellendus architecto, delectus,
+        temporibus in nihil doloremque eligendi! Dolorem, incidunt, qui unde ab
+        quaerat dolorum officia nobis voluptatibus maxime repudiandae nemo
+        molestiae quibusdam sequi quasi facere iure magni totam odio possimus,
+        eligendi consequatur nostrum ipsam dicta temporibus! Neque quae
+        asperiores maiores nisi, perferendis ducimus vero dolores distinctio
+        nostrum ea laborum doloremque magni voluptate, reiciendis, voluptatibus
+        omnis <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Alias nisi provident, qui dolor a, ipsam placeat ad nostrum harum
+        nobis rem asperiores, id aut corporis? Ut minima officiis omnis, optio
+        expedita quaerat soluta, debitis consequatur doloribus quae nesciunt
+        quia ducimus sequi adipisci? Libero magnam aliquid praesentium ex enim
+        officia reiciendis sequi aspernatur minima, harum doloremque natus.
+        Commodi dolorem tempora, quas omnis itaque repudiandae esse, sequi illo
+        aut ab sint. Facere vel provident quidem, incidunt doloremque beatae
+        consectetur architecto. Eligendi, suscipit labore qui deleniti nisi
+        explicabo porro cum distinctio architecto. Quasi doloremque ducimus
+        asperiores maiores commodi repellendus nemo, facere quibusdam
+        architecto! <br /><br />Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Autem, porro rerum illo nobis eum fugit repudiandae
+        est cumque! Magni, reiciendis totam, voluptatum sed sint maxime eligendi
+        natus vero, culpa laudantium asperiores. Quam similique ullam impedit
+        amet, quas, blanditiis debitis culpa accusamus, commodi ex ducimus quae
+        tenetur quo accusantium? Eos beatae ea optio quaerat dicta sunt et
+        soluta, perspiciatis facilis eum animi obcaecati debitis unde nam
+        ratione, maxime, culpa cupiditate? Voluptatum placeat, eius odit vel
+        ullam repudiandae ad? Inventore alias dolor earum soluta delectus
+        aliquam omnis odit sed similique adipisci voluptatem ab rerum qui,
+        distinctio expedita dolorum. Commodi modi corrupti optio, ullam veniam
+        corporis. Delectus quidem facilis molestias nihil ad repudiandae, non
+        aliquid suscipit fugiat obcaecati dignissimos alias, et aspernatur
+        reiciendis dolor similique aut numquam quae voluptatum tempora corrupti
+        dolorum officiis ipsa! Nostrum aperiam quibusdam nisi odio deleniti
+        distinctio, animi recusandae quisquam eveniet doloremque omnis sapiente
+        eum hic cum iure optio? <br /><br />
+      </p>
+    </div>
+
+    <script>
+      let sun = document.getElementById("sun");
+      let back = document.getElementById("back");
+      let front = document.getElementById("front");
+      let forest = document.getElementById("forest");
+      let btn = document.getElementById("btn");
+      let header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        sun.style.left = value + "px";
+        sun.style.top = value * 1.4 - 300 + "px";
+        forest.style.bottom = value * 0.01 + "px";
+        back.style.bottom = value * -1.3 + 215 + "px";
+        front.style.bottom = value * -1.1 + 20 + "px";
+        btn.style.bottom = value * -0.7 + 250 + "px";
+        header.style.top = value + "px";
+        btn.style.marginLeft = value * -1 + "px";
+      });
+    </script>
+  </body>
+</html>
